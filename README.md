@@ -1,2 +1,2 @@
-# phyto_home
+# pytho_home
 learning python and network automation 
