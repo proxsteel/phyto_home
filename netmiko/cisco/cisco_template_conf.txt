@@ -1,0 +1,11 @@
+ip name-server 8.8.8.8
+no ip http server
+ip http secure-server
+snmp-server community pythonxp RO
+snmp-server community pythonxp RW
+ntp server pool.ntp.org
+ntp update-calendar
+clock timezone PST -8
+clock summer-time PDT recurring
+service timestamps debug datetime msec localtime
+service timestamps log datetime msec localtime

@@ -1,0 +1,6 @@
+ip access-list extended DEMO
+permit tcp any host 192.168.122.11 eq 23
+permit tcp host 192.168.122.11 any eq 23
+deny ip any any 
+do wr
+

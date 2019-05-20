@@ -1,0 +1,1 @@
+napalm --vendor junos --user devop --password junOSxp --optional_args 'port=830, config_lock=False' 192.168.122.10 call get_facts

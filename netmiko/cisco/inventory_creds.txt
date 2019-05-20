@@ -1,0 +1,5 @@
+192.168.122.11,devop,ciscoxp
+192.168.122.12,devop,ciscoxp
+192.168.122.13,devop,ciscoxp
+192.168.122.10,devop,junOSxp
+192.168.122.20,devop,junOSxp

@@ -1,0 +1,5 @@
+192.168.122.11,cisco-ios,R1
+192.168.122.12,cisco-ios,R2
+192.168.122.13,cisco-ios,R3
+192.168.122.10,juniper-os,J1
+192.168.122.20,juniper-os,J2

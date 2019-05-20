@@ -1,0 +1,6 @@
+router,dns_server,ntp_server,snmp_location,snmp_contact,snmp_community,snmp_trap_recvr
+192.168.122.10,8.8.8.8,24.56.178.140,Data center core rack,IT Security,snmprw,192.168.122.1
+192.168.122.20,8.8.4.4,24.56.178.140,Data center core rack,IT Security,snmprw,192.168.122.1
+192.168.122.30,4.4.2.2,24.56.178.140,Data center core rack,IT Security,snmprw,192.168.122.1
+192.168.122.40,4.4.2.2,24.56.178.140,Data center core rack,IT Security,snmprw,192.168.122.1
+192.168.122.50,4.4.2.2,24.56.178.140,Data center core rack,IT Security,snmprw,192.168.122.1

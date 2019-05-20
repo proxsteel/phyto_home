@@ -1,0 +1,5 @@
+ntp server 184.105.182.15
+ntp server 198.199.120.223
+ntp server 98.152.165.38
+ntp update-calendar
+do wr

@@ -1,0 +1,19 @@
+
+192.168.122.13 Netmiko _autodetect_fs failed (to workaround specify dest_file_system in optional_args.)
+192.168.122.11 Netmiko _autodetect_fs failed (to workaround specify dest_file_system in optional_args.)
+192.168.122.12 Netmiko _autodetect_fs failed (to workaround specify dest_file_system in optional_args.)
+192.168.122.12 SCP file transfers are not enabled. Configure 'ip scp server enable' on the device.
+192.168.122.13 SCP file transfers are not enabled. Configure 'ip scp server enable' on the device.
+192.168.122.11 SCP file transfers are not enabled. Configure 'ip scp server enable' on the device.
+192.168.122.11 14:53:37.550 PDT Fri May 3 2019
+192.168.122.13 *14:44:11.949 PDT Fri May 3 2019
+192.168.122.12 .14:44:59.419 PDT Fri May 3 2019
+192.168.122.13 'IOSDriver' object has no attribute 'commit_cofig'
+192.168.122.11 'IOSDriver' object has no attribute 'commit_cofig'
+192.168.122.12 'IOSDriver' object has no attribute 'commit_cofig'
+192.168.122.12 14:59:23.792 PDT Fri May 3 2019
+192.168.122.13 14:59:23.884 PDT Fri May 3 2019
+192.168.122.11 14:59:23.883 PDT Fri May 3 2019
+192.168.122.13 17:15:05.975 PDT Fri May 3 2019
+192.168.122.11 17:15:06.057 PDT Fri May 3 2019
+192.168.122.12 17:15:06.041 PDT Fri May 3 2019
