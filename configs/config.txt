@@ -1,0 +1,6 @@
+set system name-server 8.8.8.8
+set system ntp server 24.56.178.140
+set snmp location "DC-1 Core Rack 1"
+set snmp contact "NetOps Department: 425-521-9282"
+set snmp community netopsRW  autorization read-write
+set snmp trap-group snmp-traps targets 192.168.122.1

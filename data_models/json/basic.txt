@@ -1,0 +1,52 @@
+JSON schema # https://pypi.python.org/pypi/jsonschema
+JSON        #JavaScrip Object Notation
+json        #is a built-in library in python
+{}        #Objects are enclosed in curly braces, in python == dictionary
+           and always use string values when describing the keys 
+[]        #List respresentation in JSON
+Value     #can be: number, string, bool, arry==list, object==Dict, Null==null
+Validator # https://jsonlint.com/
+*Data representation:
+1. a list of vendors ...
+
+[
+  "Cisco",
+  "Juniper",
+  "Arista",
+  "Brocade"
+]
+
+2. a dictionary ...
+
+{
+  "cisco": "6513",
+  "juniper": "srx200",
+  "VMware": "esxi"
+}
+
+2.1 a list of dictionaies
+
+{
+   "Vendors": [              #Vendors is a key and the value is a list
+       {
+           "cisco": 6513,    #objects as a key: Value pair
+           "Type": "switch"
+       },
+       {
+           "juniper": "srx200",
+           "Type": "firewall"
+       }
+       
+   ]
+}
+
+3. Load JSON file into python example:
+
+import json
+with open("example.json") as F:
+    data = F.read()
+    j_dict = json.loads(data)
+    print(type(j_dict))  
+
+for k, v in j_dict.items():
+    print ("Key {key}: Value {value} ".format(key=k, value=v))

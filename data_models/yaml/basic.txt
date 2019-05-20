@@ -1,0 +1,37 @@
+YAML   #YAML Ain't Markup Language
+pyYAML #yaml parser in python, built-in library
+---    #beginnign of yaml document
+(...)  #the end of document
+:      #colon is a part of YAML syntax, must be quoted when is a strings elements
+
+*data representation:
+1. a list of vendors, each element in the list can be any type of data
+                                                (str, int, bool, list)
+---
+- cisco             # string data type
+- juniper
+- arista
+- brocade
+- cumulus
+- 6513              # is integer it may keept as a string enclosing in "" quotes
+- False/True/On/Off # Boolean
+- ['switchport', 'mode', 'access', 2960]
+
+2. a dictionary representation:
+
+---
+cisco: 6513
+juniper: srx200
+Brocade: True
+VMware:
+  - esxi
+  - vcenter
+  - nsx
+
+3. Load yaml file into python example:
+
+import yaml
+with open("example.yaml") as F:
+    result = yaml.load(F)
+    print(result)
+    print(type(result))

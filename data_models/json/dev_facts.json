@@ -1,0 +1,13 @@
+{
+   "Vendors": [
+       {
+           "cisco": 6513,
+           "Type": "switch"
+       },
+       {
+           "juniper": "srx200",
+           "Type": "firewall"
+       }
+
+   ]
+}

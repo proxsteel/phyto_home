@@ -1,0 +1,62 @@
+#Spaceing and intendation doesn'r matter for validation
+#XML elements can have attriburtes:
+<device type="datacenter-switch" />
+ when information may have some associated metadata an attribute may be 
+ more appropriate then a child element
+
+#Data is enclosed betwen <><> tags 
+XML tags:
+<tag1> data </tag2>
+
+EX:
+<root>
+  <tag1> data1 </dag1>
+  <tag2> data2 </dag2>
+  <tag3> data3 </dag3>
+  <tag4> data4 </dag4>
+</root>
+
+#xlmns - XML namespace helps to avoid element duplications
+EX:
+<device>Palm Pilot</device>
+<root>
+  <e:device xmlns:c="https://example.org/enduserdevice"> Palm Pilot </e:device>
+  <n:device xmlns:m="https://example.org/networkdevice">
+    <n:vendo> Cisco </n:vendor>
+    <n:model> Nexus 7700 </n:model>
+    <n:osver> NxOS 6.5 </n:osver>
+  </n:device> 
+</root>
+
+#XSD - XML Schema Definition for Data models
+EX:
+1.0 XML information
+
+  <device>
+    <vendo> Cisco <vendor>
+    <model> Nexus 7700 <model>
+    <osver> NxOS 6.5 <osver>
+  </device>
+
+1.1 XSD schema that describes the data type from XML
+
+  <?xml version="1.0" encoding="utf8"?>
+  <xs:schema elementFromDefault="qualified" xmlns:xs"http://www.w3.org/2001/XMLSchema"> 
+     <xs:element name="device">
+     <xs:complexType>
+       <xs:sequence>
+         <xs:elemnt name="vendor" type="xs:string"/>
+         <xs:elemnt name="model" type="xs:string"/>
+         <xs:elemnt name="osver" type="xs:string"/>
+       </xs:sequence>
+     </xs:complexType>
+     </xs:element>
+  </xs:schema>
+
+1.2 Python tools for creating XLM schemas: pyxb
+
+ pyxbgen -u schema.xsd -m schema
+ #this will create a schema.py that can be imported in python
+ #and randered by toxml() method
+
+ 
