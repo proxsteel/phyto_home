@@ -15,6 +15,7 @@ import os
 import logging
 #https://medium.com/@ageitgey/python-3-quick-tip-the-easy-way-to-deal-with-file-paths-on-windows-mac-and-linux-11a072b58d5f
 #########################################################################
+#https://www.ftdichip.com/Support/Documents/AppNotes/AN_220_FTDI_Drivers_Installation_Guide_for_Linux.pdf
 #########################################################################
 
 #HOST = input("IP address: ")
