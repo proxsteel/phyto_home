@@ -1,0 +1,44 @@
+Configuration Steps
+1. Check no config exists on required ports.
+(Control/Management)
+2. Verify hardware and Junos version is same.
+3. Connect control link.
+4. Connect fabric link.
+5. Configure the cluster and verify.
+========================================================================
+ Confirm nothing is configured on ge-0/0/2 and fe-0/0/7
+ #delete interfaces
+ #delete security
+ #delete vlans
+ #delete
+ ========================================================================
+ Verify hardware and Junos version is the same on both
+Cluster candidates
+ #show chassis hardware detail
+ #show version
+========================================================================
+- Connecting “Control” link
+ - Physically connect both devices together using Ethernet cable on fe-0/0/7
+
+  No configuration commands are needed for the control link.
+
+ SRX high-end devices (SRX5600, SRX5800, SRX3400 and SRX3600), 
+ the SRX supports dual control links.
+ ========================================================================
+ - Connecting “Fabric” link
+  - Physically connect both devices together using Ethernet
+cable on any port, in this case it will be ge-0/0/2 on both.
+========================================================================
+- Configure The Cluster
+ - To configure the SRX devices to become part of a cluster we issue the following commands:
+   SRX1>set chassis cluster cluster-id 1 node 0 reboot
+   SRX2>set chassis cluster cluster-id 1 node 1 reboot
+Cluster ID – Identifies the cluster, must be unique on a Layer 2 domain.
+Node – Identifies the device that is part of the cluster.
+========================================================================
+- Verify Cluster Operation
+  >show chassis cluster status
+  >show chassis cluster statistics
+  >show interfaces terse
+Check lights on the front panel of SRX, lights should be solid green.
+========================================================================
