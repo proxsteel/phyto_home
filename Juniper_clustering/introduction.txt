@@ -1,1 +1,18 @@
+FXP0 – Management link
+⬜ FXP1 – Control link
+⬜ Fab1 & Fab0 - Fabric (Data) links
+⬜ Reth – Redundant Ethernet interfaces
 
+Control & Management ports
+For SRX240:
+⬜ Control = ge-0/0/1
+⬜ Management = ge-0/0/0
+For SRX110:
+⬜ Control = fe-0/0/7
+⬜ Management = fe-0/0/6
+
+For SRX210:
+⬜ Control = fe-0/0/7
+⬜ Management = fe-0/0/2
+
+The fabric link connection for the SRX100 must be a pair of Fast Ethernet interfaces and for the SRX210 must be a pair of either Fast Ethernet or Gigabit Ethernet interfaces. The fabric link connection must be any pair of either Gigabit Ethernet or 10-Gigabit Ethernet interfaces on all other SRX Series devices
