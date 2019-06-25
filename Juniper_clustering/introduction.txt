@@ -14,8 +14,9 @@ For SRX110:
 ⬜ Management = fe-0/0/6
 
 For SRX210:
-⬜ Control = fe-0/0/7
-⬜ Fabric/Data = [f/g]e-0/0/2
+⬜ Mgmt = fe-0/0/0             == fxp0
+⬜ Control = fe-0/0/7          == fxp1
+⬜ Fabric/Data = [f/g]e-0/0/2  == fab0
 
 The fabric link connection for the SRX100 must be a pair of Fast Ethernet interfaces 
 and for the SRX210 must be a pair of either Fast Ethernet or Gigabit Ethernet interfaces. 
