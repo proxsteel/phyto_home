@@ -1,7 +1,7 @@
 SRX HA modes: Active/Passive, Active/Active
 Special Interfaces
-⬜ FXP0 – Management link
-⬜ FXP1 – Control link
+⬜ FXP0 – Management link(fxp0 or me0, it's platform dependent on the control plane)
+⬜ FXP1 – Control link (internal link between RE and PFE, fxp1 or em0)
 ⬜ Fab1 & Fab0 - Fabric (Data) links
 ⬜ Reth – Redundant Ethernet interfaces
 
