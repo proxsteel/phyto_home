@@ -1,3 +1,4 @@
+SRX HA modes: Active/Passive, Active/Active
 Special Interfaces
 ⬜ FXP0 – Management link
 ⬜ FXP1 – Control link
