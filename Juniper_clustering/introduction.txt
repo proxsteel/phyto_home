@@ -15,4 +15,7 @@ For SRX210:
 ⬜ Control = fe-0/0/7
 ⬜ Management = fe-0/0/2
 
-The fabric link connection for the SRX100 must be a pair of Fast Ethernet interfaces and for the SRX210 must be a pair of either Fast Ethernet or Gigabit Ethernet interfaces. The fabric link connection must be any pair of either Gigabit Ethernet or 10-Gigabit Ethernet interfaces on all other SRX Series devices
+The fabric link connection for the SRX100 must be a pair of Fast Ethernet interfaces 
+and for the SRX210 must be a pair of either Fast Ethernet or Gigabit Ethernet interfaces. 
+The fabric link connection must be any pair of either Gigabit Ethernet or 10-Gigabit Ethernet 
+interfaces on all other SRX Series devices
