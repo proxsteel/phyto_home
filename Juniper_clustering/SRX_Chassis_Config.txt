@@ -16,6 +16,7 @@ Configuration Steps
 Cluster candidates
  #show chassis hardware detail
  #show version
+ #show system snapshot media internal slice alternate
 ========================================================================
 - Connecting “Control” link
  - Physically connect both devices together using Ethernet cable on fe-0/0/7
