@@ -14,7 +14,7 @@ For SRX110:
 ⬜ Management = fe-0/0/6
 
 For SRX210:
-⬜ Mgmt = fe-0/0/0             == fxp0
+⬜ Mgmt = [f/g]e-0/0/0             == fxp0
 ⬜ Control = fe-0/0/7          == fxp1
 ⬜ Fabric/Data = [f/g]e-0/0/2  == fab0
 
