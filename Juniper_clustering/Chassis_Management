@@ -1,0 +1,38 @@
+Possible Scenarios
+
+We have two ways of managing the cluster.
+1. Managing the whole cluster as one logical device using fxp0 or Reth interface.
+2. Configure individual devices to have their own management IPs on the fxp0 interfaces
+
+1. Managing the whole cluster as one
+Configure everything on the primary node, and all changes will be propagated to the secondary node on commit. 
+Configuring this way will give 1 logical IP to manage your cluster.
+
+ primary# set interfaces fxp0 unit 0 family inet address 10.0.0.1/24
+ primary# set system host-name srx-cluster
+ primary# set system services ssh
+
+Optional:
+primary# set system services web-management https system-generated-certificate
+primary# set system services web-management https interface fxp0.0
+This allow to manage the cluster from a web interface.
+
+Note: fxp0 interface does not need to be in a security zone.
+      SSH to 10.0.0.1 you will be forwarded to the current primary node
+      
+2. Managing individual nodes
+Configure individual nodes with their own management IP on the fxp0 interface.
+
+ primary# set groups node0 system host-name SRX-primary
+ primary# set groups node0 interfaces fxp0 unit 0 family inet address 10.0.0.1/24
+ primary# set groups node0 system services ssh
+ primary# set groups node1 system host-name SRX-secondary
+ primary# set groups node1 interfaces fxp0 unit 0 family inet address 10.0.0.2/24
+ primary# set groups node1 system services ssh
+ primary# set apply-groups "${node}"
+ primary# commit
+ 
+ Verify Cluster Management
+   Confirm SSH access to cluster/individual devices.
+   Confirm access to web management.
+   Review the configuration generated.
