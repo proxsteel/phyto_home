@@ -36,6 +36,8 @@ cable on any port, in this case it will be ge-0/0/2 on both.
    SRX2>set chassis cluster cluster-id 1 node 1 reboot
 Cluster ID – Identifies the cluster, must be unique on a Layer 2 domain.
 Node – Identifies the device that is part of the cluster.
+   Switchover between primary and backup membres 
+   SRXcluster> request chassis cluster failover node <node-id>
 ========================================================================
 - Verify Cluster Operation
   >show chassis cluster status
