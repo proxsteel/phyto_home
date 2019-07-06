@@ -1,1 +1,23 @@
-set
+Configuring Fabric link:
+
+  We already have the control link set up now it's time to set up the Fabric link in our cluster. 
+  Once this is done the SRX primary will be able to sync session states to secondary via the use of
+  RTOs (real time objects). 
+  
+  Any unused port can be a Fabric link.
+
+  (Separate mgmgr scenario)
+ SRX-Primary/cluster# set interfaces fab0 fabric-options member-interfaces ge-0/0/0 *//(node0)
+ SRX-Primary/cluster# set interfaces fab1 fabric-options member-interfaces ge-2/0/0 *//(node1)
+  
+Configuring Redundant Fabric Link(Optional)
+ To add fabric link redundancy you could add a second fabric link (Junos 10.2+ )
+
+ SRX-Primary/cluster# set interfaces fab0 fabric-options member-interfaces ge-0/0/1
+ SRX-Primary/cluster# set interfaces fab1 fabric-options member-interfaces ge-2/0/1
+ 
+Verify Session States:
+ Confirm RTO sync is occurring in the cluster.
+
+SRX-Primary/cluster> show chassis cluster statistics
+SRX-Primary/cluster> show chassis cluster interfaces
