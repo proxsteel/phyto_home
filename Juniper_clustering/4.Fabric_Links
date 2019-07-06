@@ -1,4 +1,4 @@
-Configuring Fabric link:
+Configuring Fabric link:(SRX210)
 
   We already have the control link set up now it's time to set up the Fabric link in our cluster. 
   Once this is done the SRX primary will be able to sync session states to secondary via the use of
