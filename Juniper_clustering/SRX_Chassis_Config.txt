@@ -6,7 +6,7 @@ Configuration Steps
 4. Connect fabric link.
 5. Configure the cluster and verify.
 ========================================================================
- Confirm nothing is configured on ge-0/0/2 and fe-0/0/7
+ Confirm nothing is configured on fe-0/0/6(mgmt link) and fe-0/0/7
  #delete interfaces
  #delete security
  #delete vlans
@@ -28,7 +28,7 @@ Cluster candidates
  ========================================================================
  - Connecting “Fabric” link
   - Physically connect both devices together using Ethernet
-cable on any port, in this case it will be ge-0/0/2 on both.
+cable on any port, in this case it will be ge-0/0/0 on both.
 ========================================================================
 - Configure The Cluster
  - To configure the SRX devices to become part of a cluster we issue the following commands:
