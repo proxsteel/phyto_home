@@ -17,9 +17,12 @@ primary# set system services web-management https system-generated-certificate
 primary# set system services web-management https interface fxp0.0
 This allow to manage the cluster from a web interface.
 
-Note: fxp0 interface does not need to be in a security zone.
+Note: a) fxp0 interface does not need to be in a security zone.
       SSH to 10.0.0.1 you will be forwarded to the current primary node
-      
+      b) before configuration individual managemnt is needed to remove fxp0 config:
+         #delete interface fxp0
+         #commit
+         
 2. Managing individual nodes
 Configure individual nodes with their own management IP on the fxp0 interface.
 
