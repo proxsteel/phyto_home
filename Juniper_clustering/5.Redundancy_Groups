@@ -1,0 +1,22 @@
+Redundancy Groups Overview:
+
+- A redundancy group is like a logical container which includes interfaces or objects from both nodes.
+- Up to 128 redundancy groups can be created.
+- The redundancy group 0, is the default group created when you enable the cluster. 
+  Control, Fabric & Management interfaces belong to this group.
+- Redundancy group 0 does not forward user traffic, for that we have to create another redundancy group.
+- One redundancy group can only have one primary node
+
+New Redundancy Group
+We need to create another redundancy group in the cluster. 
+Later is possible to assign interfaces that will belong to that group and forward user traffic across the cluster.
+ 
+ SRX-Primary# 
+  set chassis cluster reth-count 2
+  set chassis cluster redundancy-group 0 node 0 priority 200
+  set chassis cluster redundancy-group 0 node 1 priority 100
+  set chassis cluster redundancy-group 1 node 0 priority 200
+  set chassis cluster redundancy-group 1 node 1 priority 100
+ 
+  
+ So now we have two redundancy groups, 0 and 1. Node1 is primary for both redundancy?
