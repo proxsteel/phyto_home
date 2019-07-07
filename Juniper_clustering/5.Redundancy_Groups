@@ -17,6 +17,22 @@ Later is possible to assign interfaces that will belong to that group and forwar
   set chassis cluster redundancy-group 0 node 1 priority 100
   set chassis cluster redundancy-group 1 node 0 priority 200
   set chassis cluster redundancy-group 1 node 1 priority 100
- 
   
- So now we have two redundancy groups, 0 and 1. Node1 is primary for both redundancy?
+So now we have two redundancy groups, 0 and 1. 
+We can control who becomes a primary node in a redundancy group.
+ - Redundancy group 0 – Primary will be Node0
+ - Redundancy group 1 – Primary will be Node1
+
+Why would we need to control which device is primary?
+- By manipulating the primary selection inside a redundancy group we can control which node will be passing user traffic.
+
+Preemption:
+- In a redundancy group if the primary node0 dies, the secondary node1 assumes the roles of primary.
+- In a case where the node0 (originally primary) comes back online, 
+  he can assume the role of primary if preemption is configured. 
+  
+ To configure this:
+ SRX-Primary# set chassis cluster redundancy-group 1 preempt
+ (this will revert back to the original primary node with highest priority, in that redundancy group)
+
+NOTE: Preemption cannot be configured for redundancy **<<<GROUP 0>>>**
