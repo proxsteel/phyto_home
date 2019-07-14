@@ -16,7 +16,7 @@ For SRX110:
 For SRX210: --->> config genreator https : // support.juniper.net/support/tools/srxha/
 ⬜ Mgmt = fe-0/0/6             == fxp0
 ⬜ Control = fe-0/0/7          == fxp1
-⬜ Fabric/Data = ge-0/0/0  == fab0
+⬜ Fabric/Data = fe-0/0/[4-5]  == fab1 and fab0
 
 The fabric link connection for the SRX100 must be a pair of Fast Ethernet interfaces 
 and for the SRX210 must be a pair of either Fast Ethernet or Gigabit Ethernet interfaces. 
