@@ -1,0 +1,27 @@
+Reth Interfaces:
+- Reth (Redundant Ethernet) Interfaces combine 2 or more physical interfaces into one logical interface.
+- Reth interfaces can be used just like any other normal interface.
+- We can configure reth int. with an IP and assign it to a security zone.
+- Reth int. are added to a redundancy group to allow for a failover to occur.
+- Inside a logical reth int. only the physical links on the primary node are active.
+
+Create Reth0.0 – LAN side
+  SRX-Primary# set chassis cluster reth-count 2
+  SRX-Primary# set interfaces ge-0/0/0 gigether-options redundant-parent reth0
+  SRX-Primary# set interfaces ge-2/0/0 gigether-options redundant-parent reth0
+  SRX-Primary# set interfaces reth0 redundant-ether-options redundancy-group 1
+  SRX-Primary# set interfaces reth0 unit 0 family inet address 192.168.1.1/24
+  SRX-Primary# set security zones security-zone TRUST-ZONE interfaces reth0.0
+  
+Create Reth1.0 – WAN side
+ SRX-Primary# set interfaces ge-0/0/1 gigether-options redundant-parent reth1
+ SRX-Primary# set interfaces ge-2/0/1 gigether-options redundant-parent reth1
+ SRX-Primary# set interfaces reth1 redundant-ether-options redundancy-group 1
+ SRX-Primary# set interfaces reth1 unit 0 family inet address 10.23.0.1/24
+ SRX-Primary# set security zones security-zone UNTRUST-ZONE interfaces reth1.0
+
+Verify Reth Configuration
+- Confirm appropriate Reth interfaces are created and assigned under the correct redundancy groups.
+- Confirm the physical interfaces are part of the Reth interfaces.
+ 
+  SRX-Primary> show chassis cluster status
