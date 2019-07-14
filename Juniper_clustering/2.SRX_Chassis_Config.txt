@@ -37,8 +37,11 @@ cable on any port, in this case it will be fe-0/0/5 and fe-0/0/4 on both nodes.
 Cluster ID – Identifies the cluster, must be unique on a Layer 2 domain.
 Node – Identifies the device that is part of the cluster.
    
-   Switchover between primary and backup membres 
-   SRXcluster> request chassis cluster failover node <node-id>
+ Switchover between primary and backup membres 
+   SRX-Cluster> request chassis cluster failover redundancy-group X node <node-id> 
+                                                                        *//node id is the ID of device that should take precedence
+ This nedd to be reseted in case of revert back
+   SRX-Cluster>request chassis cluster failover reset redundancy-group X 
 ========================================================================
 - Verify Cluster Operation
   >show chassis cluster status
