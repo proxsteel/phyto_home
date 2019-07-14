@@ -28,7 +28,7 @@ Cluster candidates
  ========================================================================
  - Connecting “Fabric” link
   - Physically connect both devices together using Ethernet
-cable on any port, in this case it will be ge-0/0/0 on both.
+cable on any port, in this case it will be fe-0/0/5 and fe-0/0/4 on both nodes.
 ========================================================================
 - Configure The Cluster
  - To configure the SRX devices to become part of a cluster we issue the following commands:
@@ -36,6 +36,7 @@ cable on any port, in this case it will be ge-0/0/0 on both.
    SRX2>set chassis cluster cluster-id 1 node 1 reboot
 Cluster ID – Identifies the cluster, must be unique on a Layer 2 domain.
 Node – Identifies the device that is part of the cluster.
+   
    Switchover between primary and backup membres 
    SRXcluster> request chassis cluster failover node <node-id>
 ========================================================================
