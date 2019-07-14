@@ -2,8 +2,10 @@ Redundancy Groups Overview:
 
 - A redundancy group is like a logical container which includes interfaces or objects from both nodes.
 - Up to 128 redundancy groups can be created.
+
 - The redundancy group 0, is the default group created when you enable the cluster. 
   Control, Fabric & Management interfaces belong to this group.
+  
 - Redundancy group 0 does not forward user traffic, for that we have to create another redundancy group.
 - One redundancy group can only have one primary node
 
