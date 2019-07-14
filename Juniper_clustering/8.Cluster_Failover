@@ -1,0 +1,31 @@
+Failover Events
+
+Failover can be triggered by various events in our cluster. 
+
+These events can be broken up into 2 groups:
+ -- Control Plane events (Redundancy Group 0)
+ -- Data Plane events (Redundancy Group 1 and any others)
+
+- Control Plane (RG0) Events
+
+  The Control Plane can be manually or automatically triggered to cause a failover.
+--  Manual - forced by using the following command:
+ - > request chassis cluster failover redundancy-group 0 node X *//Where X is the node you want to make primary
+--  Automatic - critical hardware or software failure, complete power loss.
+  - **By default, as a hold time of 5 mins to prevent continues failover.
+  
+- Data Plane (RG1+) Events
+
+  The Data Plane can be triggered to failover manually, automatically or use configured triggers.
+--  Manual - forced by using the following command:
+ - > request chassis cluster failover redundancy-group 1 node X 
+--  Automatic - critical hardware or software failure, complete power loss, 
+    spc (service processing card) failure and memory leaks.
+
+ - Configured triggers - Interface monitoring, IP monitoring and preempt.Reset Manual Failover & Preempt
+ - During a manual failover the new primary node will have a priority set to 255
+ - If preempt is configured, and we manually failover the RG preempt will no longer work until we “reset” our failover.
+ - To reset the cluster after manual failover issue:
+  - > request chassis cluster failover reset redudancy group 0
+  - > request chassis cluster failover reset redudancy group 1  
+========================================================================================================================  
