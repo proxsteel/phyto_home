@@ -38,3 +38,10 @@ Preemption:
  (this will revert back to the original primary node with highest priority, in that redundancy group)
 
 NOTE: Preemption cannot be configured for the redundancy **<<<GROUP 0>>>**
+
+
+ Manually Switchover between primary and backup membres 
+   SRX-Cluster> request chassis cluster failover redundancy-group X node <node-id> 
+                                                                        *//node id is the ID of device that should take precedence
+ This nedd to be reseted in case of revert back
+   SRX-Cluster>request chassis cluster failover reset redundancy-group X 
