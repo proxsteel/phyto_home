@@ -35,4 +35,4 @@ Preemption:
  SRX-Primary# set chassis cluster redundancy-group 1 preempt
  (this will revert back to the original primary node with highest priority, in that redundancy group)
 
-NOTE: Preemption cannot be configured for redundancy **<<<GROUP 0>>>**
+NOTE: Preemption cannot be configured for the redundancy **<<<GROUP 0>>>**
