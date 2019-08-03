@@ -10,9 +10,8 @@ These events can be broken up into 2 groups:
 
   The Control Plane can be manually or automatically triggered to cause a failover.
 --  Manual - forced by using the following command:
- - > request chassis cluster failover redundancy-group 0 node X *//Where X is the node you want to make primary
-     NOTE: Fail the units backover after a manual failover. This is called resetting the cluster.
- - > request chassis cluster failover reset redundancy-group 0
+ - > request chassis cluster failover redundancy-group 0 node X       *//Where X is the node you want to make primary
+                                                                      *//this wil force X node to set up highes priority of 255
  
 --  Automatic - critical hardware or software failure, complete power loss.
   - **By default, as a hold time of 5 mins to prevent continues failover.
@@ -25,7 +24,9 @@ These events can be broken up into 2 groups:
 --  Automatic - critical hardware or software failure, complete power loss, 
     spc (service processing card) failure and memory leaks.
 
- - Configured triggers - Interface monitoring, IP monitoring and preempt.Reset Manual Failover & Preempt
+ - Configured triggers - Interface monitoring, IP monitoring and preempt.
+                         Reset Manual Failover & Preempt
+ 
  - During a manual failover the new primary node will have a priority set to 255
  - If preempt is configured, and we manually failover the RG preempt will no longer work until we “reset” our failover.
  - To reset the cluster after manual failover issue:
