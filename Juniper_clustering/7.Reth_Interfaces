@@ -1,6 +1,6 @@
 Reth Interfaces:
 - Reth (Redundant Ethernet) Interfaces combine 2 or more physical interfaces into one logical interface.
-- Reth interfaces can be used just like any other normal interface.
+- Reth interfaces can be used just like any other normal interface, it can be a switch/trunk port or L3 interface.
 - We can configure reth int. with an IP and assign it to a security zone.
 - Reth int. are added to a redundancy group to allow for a failover to occur.
 - Inside a logical reth int. only the physical links on the primary node are active.
