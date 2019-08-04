@@ -6,8 +6,12 @@ We can set up interface monitoring to trigger a failover when an interface goes 
 3. If the threshold goes to 0 or lower a failover is triggered.
 
    255 is a non-configurable threshold, each RG has this value.
+   
+-- The formula for RG and failover is as follows:
+       
+      * RGx value = RGx threshold – interface weight
 
-NOTE: Multiple physical links in LAG can be a membre of RETH interface, so each link might has a weight value.  
+NOTE: Multiple physical links in LAG can be a membre of RETH interface, so each link might have a weight value.  
 
 Configuration:
 
@@ -26,3 +30,20 @@ Often it is not possible to detect an outage just by monitoring the status of an
  -- Ping an upstream IP and monitor if we get a response back.
  -- If no response detected in a predefined time period, failover the redundancy group.
  -- Can monitor from our primary and secondary node at the same time.
+
+Secondary Node IP Monitoring:
+
+Monitoring the upstream IP address from our secondary node is very useful, because we can tell if upstream is reachable or not
+from the secondary node, if the upstream IP is not reachable then the cluster will not failover. There is no need to.
+
+-- Same or different upstream IP can be monitored from primary/secondary node.
+-- Because secondary node interfaces are inactive, we need to define a special secondary-ip-address, pings are sourced from this address.
+
+Configuration
+ #edit chassis cluster redundancy-group 1
+ #set ip-monitoring global-weight 255                                    (if global-threshold =< 0, RG threshold 255 minus global-weight)
+ #set ip-monitoring global-threshold 100                                 (global-threshold minus interface weight)
+ #set ip-monitoring retry-interval 1                                     (how often to ping)
+ #set ip-monitoring retry-count 5                                        (how many pings can fail)
+ #set ip-monitoring family inet 89.68.105.1 weight 100                   (how much to minus from global-threshold)
+ #set ip-monitoring family inet 89.68.105.1 interface reth1.0 secondary-ip-address 89.68.105.101 (must be in the same subnet as reth1.0)
