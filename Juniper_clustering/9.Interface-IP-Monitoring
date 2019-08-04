@@ -47,3 +47,10 @@ Configuration
  #set ip-monitoring retry-count 5                                        (how many pings can fail)
  #set ip-monitoring family inet 89.68.105.1 weight 100                   (how much to minus from global-threshold)
  #set ip-monitoring family inet 89.68.105.1 interface reth1.0 secondary-ip-address 89.68.105.101 (must be in the same subnet as reth1.0)
+ 
+Verify Failover (Using IP mon.):
+-- Issue a continuos ping from PC located on our LAN to the WAN IP while removing WAN cable from Node0
+ (Primary for RG1)
+ > show chassis cluster status
+ > show chassis cluster ip-monitoring status
+
