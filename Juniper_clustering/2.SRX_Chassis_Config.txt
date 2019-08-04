@@ -36,6 +36,12 @@ cable on any port, in this case it will be fe-0/0/5 and fe-0/0/4 on both nodes.
    SRX2>set chassis cluster cluster-id 1 node 1 reboot
 Cluster ID – Identifies the cluster, must be unique on a Layer 2 domain.
 Node – Identifies the device that is part of the cluster.
+ - Remove Membres from cluster (requires reboot). Do this to both nodes.:
+   SRX1>set chassis cluster disable reboot
+   SRX2>set chassis cluster disable reboot
+   
+ - From node 0, reboot node 1:  
+   SRX1>set chassis cluster cluster-id 1 node 1 reboot
    
  Switchover between primary and backup membres 
    SRX-Cluster> request chassis cluster failover redundancy-group X node <node-id> 
@@ -44,8 +50,11 @@ Node – Identifies the device that is part of the cluster.
    SRX-Cluster>request chassis cluster failover reset redundancy-group X 
 ========================================================================
 - Verify Cluster Operation
+  >show log jsrp
   >show chassis cluster status
   >show chassis cluster statistics
+  >show chassis cluster interfaces
   >show interfaces terse
+  
 Check lights on the front panel of SRX, lights should be solid green.
 ========================================================================
