@@ -1,0 +1,17 @@
+Interface Monitoring
+
+We can set up interface monitoring to trigger a failover when an
+interface goes down. To do this we must:
+1. Assign a weight value to each physical interface we want to
+monitor.
+2. If that inteface goes down the weight value is subtracted from
+the threshold of 255.
+3. If the threshold goes to 0 or lower a failover is triggered.
+255 is a non-configurable threshold, each RG has this value.
+
+Configuration
+Lets configure interface monitoring using the following commands:
+# set chassis cluster redundancy-group 1 interface-monitoring ge-0/0/10 weight 255
+# set chassis cluster redundancy-group 1 interface-monitoring ge-5/0/10 weight 255
+Any interface on the LAN side that goes down on a
+primary node, will trigger a cluster failover for RG1.
