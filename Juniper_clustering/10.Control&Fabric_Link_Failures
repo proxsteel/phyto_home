@@ -19,6 +19,7 @@ Fabric Link Failure
  - RG1+ (Data Plane) - Secondary node will transition to a “disabled” state.
  - RTOs and session sync will not happen, failover will not be possible.
  - RG1+ (Data Plane) primary node will continue to forward user traffic.
+ - The primary for all groups become the Primary node from RG0, a reboot is required as well in order to restore the HA cluster.
  
 Control & Fabric Link Failure
 
