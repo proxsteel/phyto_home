@@ -1,0 +1,49 @@
+Link Failures
+
+ There are a few possible scenarios that we may encounter with a failure of our cluster links.
+ - Control link fails.
+ - Fabric link fails.
+ - Both links fail at the same time.
+ 
+Controling Link Failure 
+ 
+ Assuming our fabric link is still working. The following happens if we lose our control link:
+ - RG0 (Control Plane) - Secondary node will transition to a “disabled” state.
+ - The cluster will no longer be able to failover when required.
+ - RG1+ (Data Plane) primary node will continue to forward user traffic
+ 
+Fabric Link Failure
+ 
+ Assuming our control link is still working. The following happens if we lose our fabric link:
+ - RG1+ (Data Plane) - Secondary node will transition to a “disabled” state.
+ - RTOs and session sync will not happen, failover will not be possible.
+ - RG1+ (Data Plane) primary node will continue to forward user traffic.
+ 
+Control & Fabric Link Failure
+
+ If both our control and fabric links fail:
+ - Neither node can detect each other, so they will both become primary for all redundancy groups. This is called “split-brain”.
+ - Unpredictable data flow, and duplicate IPs on network, this is very bad!!!
+ 
+The “Disabled” State
+
+ If a node goes into a “disabled” state. The following steps are needed to be performed:
+ 1. Fix the issue. (Broken cable/hardware etc.)
+ 2. Reboot the node.
+
+ If the issue that caused the node to go into disabled state in the first place is not fixed, 
+ rebooting the device could lead to split-brain scenario.
+ 
+Control Link Recovery
+
+ We already know that if there is a control link failure, our secondary node is put in a disabled state.
+ If we fix the problem with the control link we can configure our node to reboot automatically, 
+ the node will reboot only if it is in disabled state and only if it senses a working control link.
+
+ To enable the node to automatically reboot:
+ # set chassis cluster control-link-recovery
+ 
+Verify Failover (Using IP mon.)
+ - Unplug control & fabric cable, check the chassis cluster status each time.
+ - Configure control link recovery, unplug & plug back the control link, disabled node should reboot.
+ > show chassis cluster status
