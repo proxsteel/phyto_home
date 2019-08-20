@@ -42,7 +42,7 @@ Control Link Recovery
  If we fix the problem with the control link we can configure our node to reboot automatically, 
  the node will reboot only if it is in disabled state and only if it senses a working control link.
 
- To enable the node to automatically reboot:
+ To enable the node to automatically reboot after control link has recovered:
  # set chassis cluster control-link-recovery
  
 Verify Failover (Using IP mon.)
