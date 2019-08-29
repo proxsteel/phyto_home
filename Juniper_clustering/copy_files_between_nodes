@@ -1,0 +1,19 @@
+1. Check the status of the chassis cluster:
+   >show chassis cluster status
+   
+2. Check if the Fabric link is up:
+   >show interfaces terse fab*
+   Or
+   >show interfaces terse | match fab
+   
+3. After confirming the target node and fabric link are up, proceed with copying the file. For this example, 
+   assume that the source file is /var/tmp/abc.log and the target directory is /var/log/. Also, assume that the target node is node1:
+
+   Use either of the following methods:
+
+   CLI: >file copy /var/tmp/abc.log node1:/var/log/
+   Or
+   Shell: >start shell user root
+          %rcp -T /var/tmp/abc.log node1:/var/log/
+          
+          More details: https://kb.juniper.net/InfoCenter/index?page=content&id=KB17410&actp=METADATA
