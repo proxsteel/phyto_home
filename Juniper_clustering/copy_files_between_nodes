@@ -17,3 +17,5 @@
           %rcp -T /var/tmp/abc.tgz node1:/var/tmp/
           
           More details: https://kb.juniper.net/InfoCenter/index?page=content&id=KB17410&actp=METADATA
+4. switch over between nodes RPs.
+  > request routing-engine login node x  *// x is the id numbre of secondary node. to get back to the primary use exit command. 
