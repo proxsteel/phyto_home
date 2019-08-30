@@ -11,9 +11,9 @@
 
    Use either of the following methods:
 
-   CLI: >file copy /var/tmp/abc.log node1:/var/log/
+   CLI: >file copy /var/tmp/abc.tgz node1:/var/tmp/
    Or
    Shell: >start shell user root
-          %rcp -T /var/tmp/abc.log node1:/var/log/
+          %rcp -T /var/tmp/abc.tgz node1:/var/tmp/
           
           More details: https://kb.juniper.net/InfoCenter/index?page=content&id=KB17410&actp=METADATA
