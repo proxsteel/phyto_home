@@ -1,0 +1,21 @@
+LAG Monitoring
+- In terms of monitoring our LAG and triggering failover we have 2 options.
+- Monitor each individual physical interface that is part of our LAG. Adjusting weight values as required.
+- Don’t monitor physical ports but monitor our LAG Reth0 interface instead.
+- If we decide to monitor our Reth interface we need to specify the minimum links that can go down in our “Sub-LAG”.
+
+Configuration:
+
+The minimum links command specifies how many interfaces can go down within our 
+Sub-LAG before considering Reth as down on the active node.
+
+Once we have minimum links configured, we can then monitor our Reth interface. We don’t need physical weight values on each port.
+# set interfaces reth0 redundant-ether-options minimum-links 1
+# set chassis cluster redundancy-group 1 interface-monitor reth0 weight 255
+
+Adding more physical interfaces to our LAG will not require us to manually change weight values for each port.
+- Monitoring Reth interface will also check LACP is working correctly in LAG. Can’t do that with normal interface monitoring
+
+Verification:
+ - > show chassis cluster status
+ - > show chassis cluster interfaces
