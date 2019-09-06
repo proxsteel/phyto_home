@@ -1,1 +1,43 @@
-sss
+1. Scenario that won't work:
+
+- When devices are part of a cluster we can’t do “traditional” link aggregation from both nodes. We must use LAG
+  node0 <=> node1
+   <-||-----||---> AE0 
+      ||   || 
+     <-||-||----> AE0
+       Switch
+       
+2. scenarion with 2 AE interfaces on switch(stack or 2 switches) and Reth/AE on SRX nodes: 
+
+- Link Aggregation Group (LAG)
+-  Configuring link aggregation in the cluster the correct way:
+    1. Add more physical interfaces to our Reth from both nodes in the cluster. This forms our LAG.
+    2. Configure LACP to manage our LAG.
+    3. Create 2 AE bundles on the switch. One for each physical node in the cluster. Enable LACP
+    
+LAG Configuration:
+- Add physical interfaces to our Reth to create a LAG and enable LACP.
+# set interfaces ge-0/0/9 gigether-options redundant-parent reth0
+# set interfaces ge-5/0/9 gigether-options redundant-parent reth0
+# set interfaces reth0 redundant-ether-options lacp active
+# set interfaces reth0 redundant-ether-options lacp periodic fast 
+
+- Switch Configuration
+# set chassis aggregated-devices ethernet device-count 2
+# set interfaces fe-0/0/2 fastether-options 802.3ad ae0
+# set interfaces fe-0/0/3 fastether-options 802.3ad ae0
+# set interfaces fe-0/0/4 fastether-options 802.3ad ae1
+# set interfaces fe-0/0/5 fastether-options 802.3ad ae1
+# set interfaces ae0 aggregated-ether-options lacp active
+# set interfaces ae1 aggregated-ether-options lacp active
+# set interfaces ae0 aggregate-ether-options lacp periodic fast
+# set interfaces ae1 aggregate-ether-options lacp periodic fast
+# set interfaces ae0 unit 0 family ether-switching vlan members vlan vlan-trust
+# set interfaces ae1 unit 0 family ether-switching vlan members vlan vlan-trust
+
+- LAG Verification:
+ > show interfaces reth0 detail
+ > show interfaces ae0 detail
+ > show interfaces terse
+ > show lacp statistics interfaces ae0
+ > show lacp interfaces
