@@ -1,4 +1,4 @@
-Configuration Steps
+Configuration Steps {additional resources: www. tunnelsup. com/configuring-ha-on-juniper-srx-through-junos/}
 1. Check no config exists on required ports.
 (Control/Management)
 2. Verify hardware and Junos version is same.
