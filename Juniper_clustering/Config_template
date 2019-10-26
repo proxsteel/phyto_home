@@ -1,0 +1,81 @@
+**Group node specific config:
+set groups node0 system host-name SRX210-HA-Primary
+set groups node0 system services ssh root-login deny
+set groups node0 system services ssh protocol-version v2
+set groups node0 system services netconf ssh
+set groups node0 system services web-management https system-generated-certificate
+set groups node0 system services web-management https interface fxp0.0
+set groups node0 interfaces fxp0 unit 0 family inet address 10.25.3.10/24
+
+set groups node1 system host-name SRX210-HA-Backup
+set groups node1 system services ssh root-login deny
+set groups node1 system services ssh protocol-version v2
+set groups node1 system services netconf ssh
+set groups node1 system services web-management https system-generated-certificate
+set groups node1 system services web-management https interface fxp0.0
+set groups node1 interfaces fxp0 unit 0 family inet address 10.25.3.20/24
+set apply-groups "${node}"
+
+**Global config:
+set system host-name SRX210-HA-Cluster
+set system root-authentication encrypted-password "************************"
+set system login user USER uid 2009
+set system login user USER class super-user
+set system login user USER authentication encrypted-password "**************************"
+set system services ssh root-login deny
+set system services ssh protocol-version v2
+*
+set interfaces fxp0 unit 0 family inet address 10.25.3.33/24
+set routing-options static route 0.0.0.0/0 next-hop 87.88.89.1
+
+**Chassis clustering config and logging:
+set chassis cluster traceoptions file cluster-ha
+set chassis cluster traceoptions file size 1m
+set chassis cluster traceoptions file files 5
+set chassis cluster traceoptions file world-readable
+set chassis cluster traceoptions flag cli
+set chassis cluster traceoptions flag configuration
+set chassis cluster traceoptions flag heartbeat
+
+set chassis cluster reth-count 2
+set chassis cluster redundancy-group 1 node 0 priority 200
+set chassis cluster redundancy-group 1 node 1 priority 100
+set chassis cluster redundancy-group 1 preempt
+set chassis cluster redundancy-group 1 interface-monitor ge-0/0/0 weight 255
+set chassis cluster redundancy-group 1 interface-monitor ge-2/0/0 weight 255
+
+
+set chassis cluster redundancy-group 0 node 0 priority 200
+set chassis cluster redundancy-group 0 node 1 priority 100
+
+**Reth and physical Interface bounding config:
+set interfaces ge-0/0/0 gigether-options redundant-parent reth0
+set interfaces ge-0/0/1 gigether-options redundant-parent reth1
+set interfaces ge-2/0/0 gigether-options redundant-parent reth0
+set interfaces ge-2/0/1 gigether-options redundant-parent reth1
+
+*Attaching Reth interface to redundancy-group and IP assignment:
+set interfaces reth0 redundant-ether-options redundancy-group 1
+set interfaces reth0 unit 0 family inet address 192.168.1.100/24
+set interfaces reth1 redundant-ether-options redundancy-group 1
+set interfaces reth1 unit 0 family inet address 89.68.105.100/24
+
+*data plane link config:
+set interfaces fab0 fabric-options member-interfaces fe-0/0/4
+set interfaces fab0 fabric-options member-interfaces fe-0/0/5
+set interfaces fab1 fabric-options member-interfaces fe-2/0/4
+set interfaces fab1 fabric-options member-interfaces fe-2/0/5
+
+**Security policies:
+set security policies from-zone TRUST-ZONE to-zone UNTRUST-ZONE policy iNET-ACCESS match source-address any
+set security policies from-zone TRUST-ZONE to-zone UNTRUST-ZONE policy iNET-ACCESS match destination-address any
+set security policies from-zone TRUST-ZONE to-zone UNTRUST-ZONE policy iNET-ACCESS match application any
+set security policies from-zone TRUST-ZONE to-zone UNTRUST-ZONE policy iNET-ACCESS then permit
+
+**Definning Security zones:
+set security zones security-zone TRUST-ZONE host-inbound-traffic system-services all
+set security zones security-zone TRUST-ZONE host-inbound-traffic protocols all
+set security zones security-zone TRUST-ZONE interfaces reth0.0
+set security zones security-zone UNTRUST-ZONE host-inbound-traffic system-services ping
+set security zones security-zone UNTRUST-ZONE host-inbound-traffic system-services traceroute
+set security zones security-zone UNTRUST-ZONE interfaces reth1.0
