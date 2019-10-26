@@ -1,3 +1,4 @@
+[Additional: https://www. tunnelsup. com/sample-juniper-junos-config-for-srx210/ ]
 **Group node specific config:
 set groups node0 system host-name SRX210-HA-Primary
 set groups node0 system services ssh root-login deny
