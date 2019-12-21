@@ -37,10 +37,8 @@ cable on any port, in this case it will be fe-0/0/5 and fe-0/0/4 on both nodes.
 Cluster ID – Identifies the cluster, must be unique on a Layer 2 domain.
 Node – Identifies the device that is part of the cluster.
  - Remove Membres from cluster (requires reboot). Do this to both nodes.:
-   a. SRX1>set chassis cluster disable reboot    *//doesn't wotk for srx210
+   a. SRX1>set chassis cluster disable reboot    *//keep attention to SET do not use request 
       SRX2>set chassis cluster disable reboot
-      
-   b. set chassis cluster cluster-id 0 node 0 reboot   *//this sets cluster ID 1 to ID 0 in result cluster gets disabled.
 =========================================================================
 How to reboot devices in cluster
  - From node 0, reboot node 1:  
