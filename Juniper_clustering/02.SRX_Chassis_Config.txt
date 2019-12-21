@@ -50,7 +50,7 @@ Node – Identifies the device that is part of the cluster.
    SRX-Cluster>request chassis cluster failover reset redundancy-group X 
 ========================================================================
 - Verify Cluster Operation
-  >show log jsrp
+  >show log jsrpd
   >show chassis cluster status
   >show chassis cluster statistics
   >show chassis cluster interfaces
