@@ -51,7 +51,7 @@ How to reboot devices in cluster
    SRX-Cluster>request chassis cluster failover reset redundancy-group X 
 ========================================================================
 - Verify Cluster Operation
-  >show log jsrpd
+  >show log jsrpd  *//Junos Stateful redundancy protocol daemon. Responsible for exchanging messages and doing failover between devices.
   >show chassis cluster status
   >show chassis cluster statistics
   >show chassis cluster interfaces
