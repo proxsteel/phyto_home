@@ -1,0 +1,481 @@
+JUNIPER EX4600/4300/4200-SWITCH PRE_POST-CAPTURE Commands
+**************************************************
+show system core-dumps | no-more
+
+show system alarms | no-more
+
+show chassis alarms | no-more
+
+show system uptime | no-more
+
+show system software | no-more
+
+show version brief | no-more
+
+show system snapshot media internal | no-more
+
+show system storage partitions | no-more
+
+show chassis routing-engine | no-more
+
+show virtual-chassis status | no-more
+
+show chassis hardware | no-more
+
+show chassis firmware | no-more
+
+show chassis environment | no-more
+
+show chassis lcd | no-more
+
+show spanning-tree interface | no-more
+
+show spanning-tree bridge detail | no-more
+
+show interfaces terse | no-more
+
+show interfaces descriptions | no-more
+
+show interfaces | no-more
+
+show poe interface | no-more
+
+show arp no-resolve | no-more
+
+show lldp neighbors | no-more
+
+show ethernet-switching table | no-more
+
+show ethernet-switching interfaces | no-more
+
+show configuration | display set | no-more
+
+show log messages | no-more
+
+show system uptime | no-more
+
+show route | no-more
+
+file list /config/ detail | match rescue | no-more
+
+**************************************************
+JUNIPER MX PRE_POST-CAPTURE Commands
+
+
+show system uptime | no-more
+
+show system software | no-more
+
+show version brief | no-more
+
+show system alarms | no-more
+
+show chassis alarms | no-more
+
+show chassis routing-engine | no-more
+
+show chassis pic pic-slot 0 fpc-slot 0 | no-more
+
+show chassis environment | no-more
+
+show interfaces terse | no-more
+
+show interfaces description | no-more
+
+show interfaces | no-more
+
+show arp no-resolve | no-more
+
+show bgp summary | no-more
+
+show route receive-protocol bgp 10.25.246.20 | no-more
+
+show route advertising-protocol bgp 10.25.246.20 | no-more
+
+show route receive-protocol bgp 10.25.246.24  | no-more
+
+show route advertising-protocol bgp 10.25.246.24  | no-more
+
+show ospf neighbor | no-more
+
+show route | no-more
+
+show configuration | display set | no-more
+
+show log messages | no-more
+
+show system uptime | no-more
+
+file list /config/ detail | match rescue | no-more
+
+
+**************************************************
+JUNIPER SRX345 PRE_POST-CAPTURE Commands
+
+
+show system uptime | no-more
+
+show system software | no-more
+
+show version brief | no-more
+
+show system alarms | no-more
+
+show chassis alarms | no-more
+
+show system snapshot media internal | no-more
+
+show system storage partitions | no-more
+
+show chassis routing-engine | no-more
+
+show chassis forwarding | no-more
+
+show security monitoring fpc 0 | no-more
+
+show chassis pic pic-slot 0 fpc-slot 0 | no-more
+
+show chassis firmware | no-more
+
+show chassis environment | no-more
+
+show interfaces terse | no-more
+
+show interfaces description | no-more
+
+show interfaces | no-more
+
+show arp no-resolve | no-more
+
+show services ip-monitoring status | no-more
+
+show bgp summary | no-more
+
+show route receive-protocol bgp 10.254.6.68 | no-more
+
+show route advertising-protocol bgp 10.254.6.68 | no-more
+
+show route receive-protocol bgp 10.254.12.68  | no-more
+
+show route advertising-protocol bgp 10.254.12.68 | no-more
+
+show security ike security-associations | no-more
+
+show security ipsec security-associations | no-more
+
+show route | no-more
+
+show configuration | display set | no-more
+
+show log messages | no-more
+
+show system uptime | no-more
+
+file list /config/ detail | match rescue | no-more
+
+**************************************************
+JUNIPER SRX-CLUSTER PRE_POST-CAPTURE Command
+
+
+show system uptime | no-more
+
+show system software | no-more
+
+show version brief | no-more
+
+show system alarms | no-more
+
+show chassis alarms | no-more
+
+show system snapshot media internal | no-more
+
+show system storage partitions | no-more
+
+show chassis routing-engine | no-more
+
+show chassis forwarding | no-more
+
+show security monitoring fpc 0 | no-more
+
+show chassis pic pic-slot 0 fpc-slot 0 | no-more
+
+show chassis pic pic-slot 0 fpc-slot 0 | no-more
+
+show chassis hardware node 0 | no-more
+
+show chassis hardware node 1 | no-more
+
+show chassis cluster status | no-more
+
+show chassis cluster interfaces | no-more
+
+show chassis cluster ip-monitoring status | no-more
+
+show chassis environment | no-more
+
+show interfaces terse | no-more
+
+show interfaces description | no-more
+
+show interfaces | no-more
+
+show arp no-resolve | no-more
+
+show services ip-monitoring status | no-more
+
+show bgp summary | no-more
+
+show route receive-protocol bgp 10.254.12.180 | no-more
+
+show route advertising-protocol bgp 10.254.12.180 | no-more
+
+show route receive-protocol bgp 10.254.6.180  | no-more
+
+show route advertising-protocol bgp 10.254.6.180  | no-more
+
+show security ike security-associations | no-more
+
+show security ipsec security-associations | no-more
+
+show route | no-more
+
+show configuration | display set | no-more
+
+show log messages | no-more
+
+show system uptime | no-more
+
+file list /config/ detail | match rescue | no-more
+
+**************************************************
+JUNIPER EX4200/4500/4600-SWITCH with OSPF PRE_POST-CAPTURE Commands
+
+show system uptime | no-more
+
+show system software | no-more
+
+show version brief | no-more
+
+show system alarms | no-more
+
+show chassis alarms | no-more
+
+show system snapshot media internal | no-more
+
+show system storage partitions | no-more
+
+show chassis routing-engine | no-more
+
+show virtual-chassis status | no-more
+
+show chassis firmware | no-more
+
+show chassis environment | no-more 
+
+show interfaces terse | no-more
+
+show interfaces descriptions | no-more 
+
+show interfaces | no-more 
+
+show arp no-resolve | no-more 
+
+show lldp neighbors | no-more
+
+ show ethernet-switching table | no-more 
+
+show ospf neighbor | no-more 
+
+show route summary | no-more 
+
+show route protocol ospf  | no-more
+
+show route | no-more
+
+show configuration | display set | no-more
+
+show log messages | no-more
+
+show system uptime | no-more
+
+file list /config/ detail | match rescue | no-more
+
+**************************************************
+JUNIPER SRX240 with OSPF PRE_POST-CAPTURE Commands
+
+
+show system uptime | no-more
+
+show system software | no-more 
+
+show version brief | no-more 
+
+show system alarms | no-more
+
+show chassis alarms | no-more 
+
+show system snapshot media internal | no-more
+
+show system storage partitions | no-more
+
+show chassis routing-engine | no-more
+
+show chassis forwarding | no-more
+
+show security monitoring fpc 0 | no-more
+
+show chassis pic pic-slot 0 fpc-slot 0 | no-more
+
+show chassis environment | no-more
+
+show interfaces terse | no-more
+
+show interfaces description | no-more
+
+show interfaces | no-more
+
+show arp no-resolve | no-more
+
+show ospf neighbor | no-more
+
+show bgp summary | no-more
+
+show route receive-protocol bgp 10.254.6.82 | no-more
+
+show route advertising-protocol bgp 10.254.6.82| no-more
+
+show route receive-protocol bgp 10.254.12.94 | no-more
+
+show route advertising-protocol bgp 10.254.12.94 | no-more
+
+show security ike security-associations | no-more
+
+show security ipsec security-associations | no-more
+
+show route summary | no-more
+
+show route protocol ospf  | no-more
+
+show route | no-more
+
+show configuration | display set | no-more
+
+show log messages | no-more
+
+show system uptime | no-more
+
+file list /config/ detail | match rescue | no-more
+
+**************************************************
+
+JUNIPER SRX320 PRE_POST-CAPTURE Commands
+
+show system uptime | no-more
+
+show system software | no-more
+
+show version brief | no-more
+
+show system alarms | no-more
+
+show chassis alarms | no-more
+
+show system snapshot media internal | no-more
+
+show system storage partitions | no-more
+
+show chassis routing-engine | no-more
+
+show chassis forwarding | no-more
+
+show security monitoring fpc 0 | no-more
+
+show chassis pic pic-slot 0 fpc-slot 0 | no-more
+
+show chassis environment | no-more
+
+show interfaces terse | no-more
+
+show interfaces description | no-more
+
+show interfaces | no-more
+
+show poe interface | no-more
+
+show arp no-resolve | no-more
+
+show bgp summary | no-more
+
+show route receive-protocol bgp <Neighbor Address> | no-more
+
+show route advertising-protocol bgp <Neighbor Address> | no-more
+
+show route receive-protocol bgp <Neighbor Address>  | no-more
+
+show route advertising-protocol bgp <Neighbor Address>  | no-more
+
+show security ike security-associations | no-more
+
+show security ipsec security-associations | no-more
+
+show route | no-more
+
+show configuration | display set | no-more
+
+show log messages | no-more
+
+show system uptime | no-more
+
+file list /config/ detail | match rescue | no-more
+
+
+**************************************************
+MX Routers
+
+show system uptime | no-more
+
+show system software | no-more
+
+show version brief | no-more
+
+show system alarms | no-more
+
+show chassis alarms | no-more
+
+show chassis routing-engine | no-more
+
+show chassis environment | no-more
+
+show interfaces terse | no-more
+
+show interfaces description | no-more
+
+show interfaces | no-more
+
+show arp no-resolve | no-more
+
+show lldp neighbors | no-more
+
+show bgp summary | no-more
+
+show ospf neighbor | no-more 
+
+show route summary | no-more 
+
+show route protocol ospf  | no-more
+
+show route receive-protocol bgp 10.133.249.2 | no-more
+
+show route advertising-protocol bgp 10.133.249.2 | no-more
+
+show route receive-protocol bgp 10.133.249.22  | no-more
+
+show route advertising-protocol bgp 10.133.249.22  | no-more
+
+show route | no-more
+
+show configuration | display set | no-more
+
+show log messages | no-more
+
+file list /config/ detail | match rescue | no-more
